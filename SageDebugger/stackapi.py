@@ -1,5 +1,6 @@
 import requests
 
+# stack overflow search algorithim code
 # specific query
 sample_q1 = "urllib3 v2.0 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with LibreSSL 2.8.3"
 # semi-specific query
@@ -97,3 +98,4 @@ def ask(question):
 
 
 print(ask(sample_q1))
+
