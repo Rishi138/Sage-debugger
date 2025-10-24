@@ -1,0 +1,12 @@
+    if prev_score == 1 and score["total_score"] <= 85:
+        score['additional_instructions'] = "Analyze the repository structure more carefully and regenerate bash commands " \
+                                           "based on feedback. After regeneration, use this critique tool again to " \
+                                           "validate the solution. Continue this process until the solution is robust."
+    elif score["improvement"] < -5:
+        score['additional_instructions'] = "Solution quality decreased significantly. Revert to previous approach and refine carefully."
+    elif score_total >= 90 or (score['improvement'] <= 5 and score_total >= 85):
+        score['additional_instructions'] = "Solution quality is sufficient. Make final refinements based on feedback and return the bash commands."
+    else:
+        score['additional_instructions'] = "Continue improving the solution based on feedback. Regenerate bash commands " \
+                                           "and critique again. Focus on repository understanding and command accuracy."
+    return score
