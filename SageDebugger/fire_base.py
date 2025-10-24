@@ -1,7 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
-
-cred = credentials.Certificate("C:/Users/rajal/PycharmProjects/SageDebugger/sage_firebase_credentials.json")
+# script to test your firebase
+cred = credentials.Certificate("path to your credentials")
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
@@ -28,3 +28,4 @@ def add_message(doc_id, content, role):
 
 add_message("0001", "can you help me out with some errors?", "user")
 add_message("0001", "Sure, could you please provide the errors.", "assistant")
+
